@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdbool.h>
+void ms(int arr[],int lo,int hi);
+void merge(int arr[],int lo,int hi,int m);
+bool sum(int arr[],int n,int k);
+int main() {
+    int t;
+    bool b;
+    scanf("%d",&t);
+    for(int i=0;i<t;i++){
+        int n,k;
+        scanf("%d %d",&n,&k);
+        int a[n],lo=0,hi=n-1;
+        for(int j=0;j<n;j++){
+            scanf("%d",&a[j]);
+        }
+        ms(a,lo,hi);
+        b=sum(a,n,k);
+        if(b==1)
+            printf("True\n");
+        else
+            printf("False\n");
+    }
+    return 0;
+}
+bool sum(int arr[],int n,int k)
+{
+    int p1=0,p2=n-1;
+    while(p1!=p2)
+    {
+        if(arr[p1]+arr[p2]<k)
+            p1++;
+        else if(arr[p1]+arr[p2]>k)
+            p2--;
+        else if(arr[p1]+arr[p2]==k)
+            return true;
+    }
+    return false;
+}
+void ms(int arr[],int lo,int hi)
+{
+    if(lo==hi) return;
+    int m=(lo+hi)/2;
+    ms(arr,lo,m);
+    ms(arr,m+1,hi);
+    merge(arr,lo,hi,m);
+}
+void merge(int arr[],int lo,int hi,int m)
+{
+    int p1=lo,p2=m+1;
+    int temp[hi-lo+1],idx=0;
+    while(p1<=m && p2<=hi)
+    {
+        if(arr[p1]<arr[p2])
+            temp[idx++]=arr[p1++];
+        else
+            temp[idx++]=arr[p2++];
+    }
+    while(p1<=m)
+    {
+        temp[idx++]=arr[p1++];
+    }
+    while(p2<=hi)
+    {
+        temp[idx++]=arr[p2++];
+    }
+    for(int i=lo;i<=hi;i++)
+    {
+        arr[i]=temp[i-lo];
+        
+    }
+}
