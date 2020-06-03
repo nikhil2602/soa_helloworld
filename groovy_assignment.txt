@@ -1,0 +1,114 @@
+*******************Exercise 1****************************
+
+def list=[];
+println(list);
+---------------------
+def list=["var1","var2"];
+println(list);
+-----------------------------
+def list=["var1","var2"];
+try{
+    if(list.get(4) == true) {
+        println(list.get(4));
+    }
+    
+}
+catch(Exception ex) {
+         println("index not found");
+}
+------------------------------------------
+def list=["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"];
+println(list.get(15));
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+******************Exercise 2*********************************
+
+def list=["a","b","c"];
+println(list);
+----------------------
+def list=["a","b","c"];
+println(list);
+list.push("d");
+println(list);
+------------------------
+def list=["a","b","c"];
+println(list);
+list.push("d");
+println(list);
+list.add("e");
+println(list);
+------------------
+def list=["a","b","c"];
+println(list);
+
+def newlist=[];
+newlist=list.plus(["d","e"]);
+println(newlist);
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*****************************Exercise 3*******************************
+
+def list=[1,2,3,4,5];
+println(list);
+
+def ans;
+ans=list.findAll{element -> element > 4}
+println(ans);
+-----------------------
+numbers = [2, 5, 8, 1, 32]
+
+
+def index2 = numbers.findIndexOf{ it % 11 == 0}
+
+
+println("Element index that divisible by 11 is"+index2);
+-----------------
+numbers = [2, 5, 8, 1, 32]
+
+
+println(numbers.size());
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*************Exercise 4**************************
+
+def list=["bag","cat","adam","disk"];
+//println(list);
+int len=list.size();
+for(x in 0..len-1) {
+    if(list[x].startsWith("a")) {
+        def value=list[x];
+        println(value.toUpperCase());
+    }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*******************compare IP Address*********************
+compare IP address 
+String a="172.16.254.1";
+//String b="216.58.216.164";
+String b="172.16.254.1";
+println(a==b);
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+********************number in string (5>4)*********************
+String a="5";
+String b="4";
+int num_a=Integer.parseInt(a);
+int num_b=Integer.parseInt(b);
+if(num_a>num_b) {
+    println("true");
+}
+else {
+    println("false");
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*****************5>4**************************
+String a="5 is greater than 4";
+int len=a.size();
+//println(len);
+//for(x in 0..len-1) {
+    
+//}
+println(a.replaceAll("[^0-9]", ""));
+println(a);
