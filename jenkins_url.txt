@@ -1,0 +1,9 @@
+https://www.eficode.com/blog/jenkins-groovy-tutorial
+
+https://www.edureka.co/blog/jenkins-pipeline-tutorial-continuous-delivery
+
+https://learning-continuous-deployment.github.io/jenkins/github/2015/04/17/github-jenkins/
+
+https://jrichardsz.github.io/devops/jenkins-generic-webhook-trigger-plugin-for-devops-with-jenkins
+
+https://plugins.jenkins.io/generic-webhook-trigger/
