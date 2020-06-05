@@ -9,8 +9,9 @@ pipeline {
             // Run Maven on a Unix agent.
            // sh "mvn -Dmaven.test.failure.ignore=true clean package"
             // To run Maven on a Windows agent, use
-             bat "mvn clean package -f ./soa_helloworld -DoracleHome=C:/Oracle/Middleware/Oracle_Home"
             println("working");
+             bat "mvn clean package -f ./soa_helloworld -DoracleHome=C:/Oracle/Middleware/Oracle_Home"
+            
             //bat  "git pull origin master"
             //bat  "git add groovy_assignment.txt"
             //bat  "git commit -m \"added\""
